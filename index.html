@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Angela de O. Batista – Currículo Online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --preto: #111111;
+      --prata: #dcdcdc;
+      --dourado: #c9a54c;
+      --champanhe: #f7f0e9;
+      --texto: #333333;
+      --cinza-claro: #faf5f0;
+      --sucesso: #3c9a5f;
+      --erro: #c0392b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--champanhe);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--preto);
+      padding: 2rem 1rem;
+      text-align: center;
+      color: var(--dourado);
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: var(--cinza-claro);
+      padding: 1rem;
+      border-radius: 25px;
+      max-width: 960px;
+      margin: 1.5rem auto;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--preto);
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: 0.4s ease;
+      font-family: 'Playfair Display', serif;
+    }
+
+    nav a:hover {
+      background-color: var(--dourado);
+      color: var(--preto);
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 3.5rem 2rem;
+      max-width: 960px;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      border-bottom: 3px solid var(--dourado);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .job-item {
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+    }
+
+    .job-title {
+      font-weight: bold;
+      color: var(--preto);
+      transition: color 0.3s;
+    }
+
+    .job-title:hover {
+      color: var(--dourado);
+    }
+
+    .job-details {
+      display: none;
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--dourado);
+      font-size: 0.95rem;
+    }
+
+    .job-item.active .job-details {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.8rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--dourado);
+      box-shadow: 0 0 5px rgba(201, 165, 76, 0.5);
+      outline: none;
+    }
+
+    button[type="submit"] {
+      background-color: var(--dourado);
+      color: #111;
+      padding: 0.9rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #b78a2b;
+      transform: scale(1.02);
+    }
+
+    .form-status {
+      margin-top: 1rem;
+      font-weight: bold;
+      display: none;
+    }
+
+    .form-status.success {
+      color: var(--sucesso);
+    }
+
+    .form-status.error {
+      color: var(--erro);
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background-color: var(--preto);
+      color: var(--prata);
+      text-align: center;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    footer .social a {
+      color: var(--prata);
+      margin: 0 0.5rem;
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    footer .social a:hover {
+      color: var(--dourado);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Angela de O. Batista</h1>
+    <p>Estudante de Direito</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#carreira">Experiência</a>
+    <a href="#formacao">Formação</a>
+    <a href="#competencias">Competências</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="sobre">
+    <h2>Sobre</h2>
+    <p>
+      Sou estudante de Bacharelado em Direito pela Faculdade Anhanguera, atualmente cursando o 7º período. Tenho experiência em estágios jurídicos e atuação administrativa, desenvolvida em instituições como a Defensoria Pública da União e empresas do setor de saúde.
+      <br><br>
+      Apaixonada por causas sociais e pelo acesso à justiça, busco oportunidades que me permitam aplicar meus conhecimentos acadêmicos na prática jurídica, contribuindo com ética, organização e comprometimento profissional.
+    </p>
+  </section>
+
+  <section id="carreira">
+    <h2>Experiência</h2>
+    <div class="job-item">
+      <div class="job-title">Defensoria Pública da União – DPU (maio/2021 – agosto/2022)</div>
+      <div class="job-details">
+        Atuação com atendimento ao público, elaboração de petições e apoio à equipe jurídica em atividades processuais.
+      </div>
+    </div>
+    <div class="job-item">
+      <div class="job-title">Sistemas e Planos de Saúde – Estágio em Direito (nov/2022 – maio/2023)</div>
+      <div class="job-details">
+        Apoio em rotinas administrativas do setor jurídico, organização de documentos, análise de contratos e auxílio a advogados.
+      </div>
+    </div>
+    <div class="job-item">
+      <div class="job-title">Sistemas e Planos de Saúde – Auxiliar Administrativa/Jurídica (maio/2023 – atual)</div>
+      <div class="job-details">
+        Execução de tarefas administrativas, controle de prazos, atendimento a clientes internos e externos, suporte em processos judiciais.
+      </div>
+    </div>
+  </section>
+
+  <section id="formacao">
+    <h2>Formação</h2>
+    <p><strong>Bacharel em Direito</strong> – Faculdade Anhanguera<br />
+      Ingresso: janeiro de 2022 | Previsão de conclusão: 2026 (7º período)</p>
+  </section>
+
+  <section id="competencias">
+    <h2>Competências</h2>
+    <ul>
+      <li>Informática</li>
+      <li>Pacote Office</li>
+    </ul>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form id="contact-form" action="https://formspree.io/f/xayrggod" method="POST" class="contact-form">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input type="email" name="email" placeholder="Seu email" required />
+      <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+      <p class="form-status" id="form-status"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Angela de O. Batista. Todos os direitos reservados.</p>
+    <div class="social">
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const statusMsg = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        statusMsg.textContent = 'Mensagem enviada com sucesso!';
+        statusMsg.className = 'form-status success';
+      } else {
+        statusMsg.textContent = 'Ocorreu um erro ao enviar. Tente novamente mais tarde.';
+        statusMsg.className = 'form-status error';
+      }
+
+      statusMsg.style.display = 'block';
+      setTimeout(() => {
+        statusMsg.style.display = 'none';
+      }, 5000);
+    });
+
+    document.querySelectorAll('.job-item .job-title').forEach(title => {
+      title.addEventListener('click', () => {
+        title.parentElement.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
